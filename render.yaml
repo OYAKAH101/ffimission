@@ -1,0 +1,21 @@
+# Render "Blueprint": New + > Blueprint > pick this repository. Render builds the website and
+# starts the server as one web service. You will be asked to paste MONGODB_URI.
+services:
+  - type: web
+    name: immaculate-school-portal
+    runtime: node
+    plan: free
+    buildCommand: npm install --include=dev && npm run build:host
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NODE_VERSION
+        value: 22
+      - key: MONGODB_URI
+        sync: false
+      - key: SESSION_SECRET
+        generateValue: true
+      - key: CREDENTIAL_KEY
+        generateValue: true

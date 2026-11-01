@@ -1,0 +1,30 @@
+{
+  "name": "immaculate-school-portal-server",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "API for the Mission of the Immaculate Nursery and Primary School Portal (Express + MongoDB)",
+  "engines": {
+    "node": ">=20.6"
+  },
+  "scripts": {
+    "start": "node --env-file=.env src/index.js",
+    "dev": "node --env-file=.env --watch src/index.js",
+    "test": "node --test",
+    "create-admin": "node --env-file=.env scripts/create-admin.js",
+    "reset-password": "node --env-file=.env scripts/reset-password.js",
+    "import": "node --env-file=.env scripts/import.js",
+    "start:host": "node src/index.js",
+    "secrets": "node scripts/generate-secrets.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "connect-mongo": "^5.1.0",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "express-session": "^1.18.1",
+    "helmet": "^8.0.0",
+    "mongoose": "^8.9.5",
+    "zod": "^3.24.1"
+  }
+}

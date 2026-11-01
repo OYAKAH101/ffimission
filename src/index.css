@@ -1,0 +1,77 @@
+@import 'tailwindcss';
+
+/*
+  Design tokens taken from the school crest:
+  - navy  : shield outline and lettering (primary, used for text and buttons)
+  - blush : pink inner border and ribbon (accent)
+  - marian: blue of the statue and pupil uniforms (secondary)
+  - gold  : fine trim on the statue (sparing highlight)
+  Pink is used for fills and borders; blush-700 is the shade safe for text on white.
+*/
+@theme {
+  --font-sans: 'Nunito Sans', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Merriweather', Georgia, 'Times New Roman', serif;
+
+  --color-navy-50: #f1f4fa;
+  --color-navy-100: #dfe6f3;
+  --color-navy-200: #bccae4;
+  --color-navy-300: #8ea4cd;
+  --color-navy-400: #627fb4;
+  --color-navy-500: #456299;
+  --color-navy-600: #344e80;
+  --color-navy-700: #263c66;
+  --color-navy-800: #1a2c52;
+  --color-navy-900: #101e3d;
+
+  --color-blush-50: #fef4f8;
+  --color-blush-100: #fce6ef;
+  --color-blush-200: #f9cddf;
+  --color-blush-300: #f4a8c5;
+  --color-blush-400: #ec7fa9;
+  --color-blush-500: #df5688;
+  --color-blush-600: #c43b6d;
+  --color-blush-700: #9f2d58;
+
+  --color-marian-50: #f0f6fc;
+  --color-marian-100: #deebf8;
+  --color-marian-200: #bed6ef;
+  --color-marian-300: #94bbe2;
+  --color-marian-400: #6c9fd1;
+  --color-marian-500: #4f82b9;
+  --color-marian-600: #3d6a9d;
+  --color-marian-700: #335781;
+
+  --color-gold-100: #f6ecd2;
+  --color-gold-500: #b8913f;
+  --color-gold-700: #7d6120;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  body {
+    background-color: #f6f8fc;
+    color: var(--color-navy-900);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+  }
+
+  button:not(:disabled),
+  [role='button'] {
+    cursor: pointer;
+  }
+}

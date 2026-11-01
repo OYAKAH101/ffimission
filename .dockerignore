@@ -1,0 +1,9 @@
+node_modules
+server/node_modules
+dist
+.env
+server/.env
+server/storage
+server/output
+server/data/import
+.git
